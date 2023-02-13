@@ -1,4 +1,5 @@
 ﻿Console.Clear();
+
 int Max(int arg1, int arg2, int arg3)
 {
     int result = arg1;
@@ -10,7 +11,7 @@ int Max(int arg1, int arg2, int arg3)
 int a1 = 15;
 int b1 = 21;
 int c1 = 39;
-int a2 = 12;
+int a2 = 12000;
 int b2 = 23;
 int c2 = 336;
 int a3 = 13;
