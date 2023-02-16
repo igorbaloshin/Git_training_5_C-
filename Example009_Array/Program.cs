@@ -39,7 +39,7 @@
   
 // }
 
-void FillArray(int[] collection)
+void  FillArray(int[] collection)
 {
     int length = collection.Length;
     int index = 0;
@@ -56,9 +56,10 @@ void PrintArray(int[] col)
     int position = 0;
     while(position < count)
     {
-        Console.WriteLine(col[position]);
+        Console.Write($"{col[position]}, ");
         position++;
     }
+
 
 }
 
@@ -87,7 +88,7 @@ FillArray(array);
 
 PrintArray(array);
 
-Console.WriteLine();
+Console.WriteLine("-----");
 
-int pos = IndexOf(array, 44);
+int pos = IndexOf(array, 4);
 Console.WriteLine(pos);
