@@ -7,7 +7,7 @@ double Factorial(int n)
     else
     return n * Factorial(n - 1);
 }
-for(int i =1; i <= 30; i++)
+for(int i =1; i <= 10; i++)
 {
     Console.WriteLine($"{i} ! = {Factorial(i)}");
 }
@@ -22,7 +22,7 @@ double Fibonacci(int n)
     return Fibonacci(n - 1) + Fibonacci(n - 2);
 }
 
-for(int i = 1; i <= 40; i++)
+for(int i = 1; i <= 10; i++)
 {
     Console.WriteLine($"{ i } Fibonacci = {Fibonacci(i)}");
 }
