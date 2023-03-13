@@ -83,3 +83,52 @@ int PowerRec(int a,int n)
 
 WriteLine(PowerFor(2, 10));
 WriteLine(PowerRec(2, 10));
+//--------------------------------------------
+double fRec = 0;
+double fFor = 0;
+
+double FibonacciRec(int n)
+{
+    fRec++;
+    if(n == 1 || n == 2)
+    return 1;
+    else
+    return FibonacciRec(n - 1) + FibonacciRec(n - 2);
+}
+
+double FibonacciFor(int n)
+{
+    fFor++;
+    if(n == 1 || n == 2)
+    return 1;
+    else
+    {
+    double result = 1;
+    double f0 = 1;
+    double f1 = 1;
+    
+        for( int i = 3; i <= n; i++)
+        {
+            result = f0 + f1;
+
+            f0 = f1;
+            f1 = result;
+            fFor++;
+
+        }
+        return result;
+
+    } 
+}
+
+for(int i = 1; i <= 30; i++)
+{
+    Console.WriteLine($"{ i } FibonacciFor = {FibonacciFor(i)} fFor = {fFor}");
+    fFor = 0;
+}
+
+for(int i = 1; i <= 30; i++)
+{
+    Console.WriteLine($"{ i } FibonacciRec = {FibonacciRec(i)} fRec = {fRec}");
+    fRec = 0;
+}
