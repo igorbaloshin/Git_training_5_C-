@@ -2,7 +2,7 @@
 using static System.Console;
 Clear();
 
-int row = 32;
+int row = 25;
 int[,] triangle = new int[row, row];
 const int cellWidth = 1;
 
@@ -46,7 +46,7 @@ void Magic()
             SetCursorPosition(col, i + 1);
             //if(triangle[i, j] != 0)
             //Write($"{triangle[i, j], cellWidth}");
-            if(triangle[i, j] %2 != 0)
+            if(triangle[i, j] % 5  != 0)                  // Функция заполнения %2 %3, %4, %5....
             WriteLine("*");
             col += cellWidth * 2;
         }
