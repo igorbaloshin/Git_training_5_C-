@@ -81,17 +81,10 @@ int PowerRec(int a, int n)
 WriteLine(PowerFor(2, 10));
 WriteLine(PowerRec(2, 10));
 //--------------------------------------------
-double fRec = 0;
-double fFor = 0;
 
-double FibonacciRec(int n)
-{
-    fRec++;
-    if (n == 1 || n == 2)
-        return 1;
-    else
-        return FibonacciRec(n - 1) + FibonacciRec(n - 2);
-}
+double fFor = 0;
+double fRec = 0;
+double fRec_M = 0;
 
 double FibonacciFor(int n)
 {
@@ -116,20 +109,54 @@ double FibonacciFor(int n)
     }
 }
 
+double FibonacciRec(int n)
+{
+    fRec++;
+    if (n == 1 || n == 2)
+        return 1;
+    else
+        return FibonacciRec(n - 1) + FibonacciRec(n - 2);
+}
+
+
+double FibonacciRec_M(double first, double second, int n)
+{
+    fRec_M++;
+	if(n == 1 || n == 2)
+		return 1;
+	else if (n == 3)
+		return first + second;
+	else
+		return FibonacciRec_M(second, first + second, n - 1);
+ 
+}
+// for(int i = 1; i <= 40; i++)
+// {
+//     Console.WriteLine($"{ i } Fibonacci_M = {Fibonacci_M(1, 1, i)}");
+// }
+
 DateTime dt = DateTime.Now;
 
-for (int i = 1; i <= 45; i++)
+for (int i = 1; i <= 43; i++)
 {
-    Console.WriteLine($"{i} FibonacciFor = {FibonacciFor(i)} fFor = {fFor, 15:F0}");
+    Console.WriteLine($"{i, 3:F0} \t FibonacciFor = {FibonacciFor(i), 23:F0} \t fFor = {fFor, 10:F0}"); // "\t" табуляция  
     fFor = 0;
 }
 WriteLine((DateTime.Now - dt).TotalMilliseconds);
 
 dt = DateTime.Now;
 
-for (int i = 1; i <= 45; i++)
+for (int i = 1; i <= 43; i++)
 {
-    Console.WriteLine($"{i} FibonacciRec = {FibonacciRec(i)} fRec = {fRec, 15:F0}");//.ToString("### ### ###"), 15}");
+    Console.WriteLine($"{i, 3:F0} \t FibonacciRec = {FibonacciRec(i), 23:F0} \t fRec = {fRec, 10:F0}");//.ToString("### ### ###"), 15}");
     fRec = 0;
+}
+WriteLine((DateTime.Now - dt).TotalMilliseconds);
+
+dt =DateTime.Now;
+for (int i = 1; i <= 43; i++)
+{
+    Console.WriteLine($"{i, 3:F0} \t FibonacciRec_M = {FibonacciRec_M(1, 1, i), 23:F0} \t fFor = {fRec_M, 10:F0}"); // "\t" табуляция  
+    fFor = 0;
 }
 WriteLine((DateTime.Now - dt).TotalMilliseconds);
